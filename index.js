@@ -86,7 +86,7 @@ btn.addEventListener("click", () => {
   Swal.fire ({
     position: "center",
     icon: "success",
-    title: "Compra Realizada",
+    title: "Producto Agregado Correctamente",
     showConfirmButton: false,
     timer: 1500,
   })
