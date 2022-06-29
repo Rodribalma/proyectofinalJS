@@ -79,31 +79,58 @@ function cargarProductos() {
 window.onload = function () {
   cargarProductos();
 };
-
-const btn = document.getElementById("myBtn");
-
-btn.addEventListener("click", () => {
-  Swal.fire ({
-    position: "center",
-    icon: "success",
-    title: "Producto Agregado Correctamente",
-    showConfirmButton: false,
-    timer: 1500,
-  })
-  });
-
   const lista = document.querySelector("#listado");
 fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((producto) => {
-      const li = document.createElement("li");
+      const li = document.createElement("div");
       li.innerHTML = `
-        <h4>${producto.nombre}</h4>
-        <p>${producto.precio}</p>
-        <p>Código: ${producto.id}</p>
-        <hr/>
+      <div class="product" id="${producto.id}">
+      <div class="img">
+      <img class="imagen" src="assets/img/productos/${producto.imagen}">
+    </div>
+    <div class="title">${producto.nombre}</div>
+    <div class="price">$${producto.precio}</div>
+    <div class="code">Codigo: <span>${producto.id}</span></div>
+    <button onclick = "agregar('${producto.id}','${producto.nombre}')">Agregar</button>
+    </div>
     `;
       lista.append(li);
     });
   });
+
+  function agregar(id,nombre){
+    addEventListener("click", () => {
+      Swal.fire ({
+        position: "center",
+        icon: "success",
+        title: nombre+" agregado correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      })
+      });
+      agregando= id+" "+nombre;
+
+tipo = typeof(carrito)
+if(tipo == "undefined"){
+  carrito = agregando;
+}else{
+  carrito = carrito + "<br>" +agregando;
+  localStorage.setItem("carrito",carrito)
+
+}
+
+mostrarCarrito()
+  }
+
+  function mostrarCarrito(){
+    carrito = localStorage.getItem("carrito")
+document.getElementById('carrito').innerHTML = carrito;
+  }
+
+  function vaciarCarrito(){ 
+    localStorage.removeItem("carrito")
+    localStorage.clear("carrito")
+  document.getElementById('carrito').innerHTML = "";
+  }

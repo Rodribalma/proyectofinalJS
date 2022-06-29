@@ -1,7 +1,10 @@
 [
-  {"nombre": "Producto 1", "precio": 1500, "id": 1},
-  {"nombre": "Producto 2", "precio": 2500, "id": 2},
-  {"nombre": "Producto 3", "precio": 3500, "id": 3},
-  {"nombre": "Producto 4", "precio": 4500, "id": 4},
-  {"nombre": "Producto 5", "precio": 5500, "id": 5}
+  {"nombre": "NikeBlack", "precio": 1500, "id": 1, "imagen": "zapatilla1.jpg"},
+  {"nombre": "NikeBoy", "precio": 3500, "id": 3, "imagen": "zapatilla3.jpg"},
+  {"nombre": "NikeAirBlue", "precio": 4500, "id": 4, "imagen": "zapatilla4.jpg"},
+  {"nombre": "NikeBlack", "precio": 1500, "id": 1, "imagen": "zapatilla1.jpg"},
+  {"nombre": "NikePaste", "precio": 2500, "id": 2, "imagen": "zapatilla2.jpg"},
+  {"nombre": "NikeBoy", "precio": 3500, "id": 3, "imagen": "zapatilla3.jpg"},
+  {"nombre": "NikePaste", "precio": 2500, "id": 2, "imagen": "zapatilla2.jpg"},
+  {"nombre": "NikeAirBlue", "precio": 4500, "id": 4, "imagen": "zapatilla4.jpg"}
 ]
