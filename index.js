@@ -5,6 +5,7 @@ function cargarProductos() {
     .then((data) => {
       data.forEach((producto) => {
         const li = document.createElement("div");
+        li.setAttribute("data-aos" ,"flip-right");
         li.innerHTML = `
         <div class="col mb-4">
       <div class="card .h-100">
